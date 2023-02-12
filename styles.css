@@ -1,0 +1,426 @@
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container {
+    display:grid;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+body {
+    color: tomato;
+    background-color: #FBAB7E;
+    background-image: linear-gradient(212deg, #FBAB7E 0%, #F7CE68 100%);
+    text-align: center;
+    font-family: 'Cascadia Code';
+    font-size: clamp(1em,.5vw, 2em);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    animation: bg1 33s ease infinite;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.15) !important;
+}
+
+.header-row {
+    padding: 1px;
+    margin-left: 1px;
+    margin-right: 1px;
+    height: 13vh;
+    overflow: clip;
+}
+
+h1 {
+    margin-top: 3vh;
+    display: inline-flex;
+    font-size: clamp(1.2em,2.3vw,2em);
+}
+
+.header-logo {
+    display: block;
+    margin: auto;
+    padding: .33%;
+    height: 10%;
+    width: 17.5%;
+    align-content: center;
+}
+.header-logo img{
+    display:grid;
+    position:center;
+}
+
+.site-nav {
+    display: grid;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    overflow: unset;
+}
+.menu {
+    background: transparent;
+    position: absolute;
+    right: 2.33%;
+    margin: 1.3%;
+    top: 2.33%;
+    overflow: unset;
+}
+
+#menu-button .bar {
+    width: 3.33vw;       /*clamp(1em,4vw, 5em);*/
+    height: .6vw;     /*clamp(.2em,.3vw, 5em);*/
+    background-color: #333;
+    margin: 3px 0;
+    position: relative;
+    animation: CL1 .6s ease infinite;
+}
+#menu-button .bar:nth-of-type(2) {
+    animation: CL2 .6s ease infinite;
+    z-index:100;
+}
+#menu-button .bar:nth-of-type(3) {
+    animation: CL3 .6s ease infinite;
+}
+
+#menu-button .bar:hover {
+    transition: transform .6s ease-in-out;
+}
+#menu-button .bar:nth-of-type(1):hover {
+    transform: translateY(25%);
+}
+#menu-button .bar:nth-of-type(2):hover {
+    transform: translateX(-15%);
+}
+#menu-button .bar:nth-of-type(3):hover {
+    transform: translateY(-25%);
+}
+
+#menu-button:active .bar {
+    transition: transform .3s ease-in;
+}
+#menu-button:active .bar:nth-of-type(1) {
+    transform: translateY(200%) rotate(3.142rad);
+}
+#menu-button:active .bar:nth-of-type(2) {
+    transform: translateX(-100%);
+}
+#menu-button:active .bar:nth-of-type(3) {
+    transform: translateY(-200%) rotate(-3.142rad);
+}
+
+#menu-button.expanded .bar{
+    transition: transform .9s;
+}
+#menu-button.expanded .bar:nth-of-type(1) {
+    transform: translateY(50%);
+}
+#menu-button.expanded .bar:nth-of-type(2) {
+    transform: translateX(-50%);
+}
+#menu-button.expanded .bar:nth-of-type(3) {
+    transform: translateY(-50%);
+}
+
+.primary-nav {
+    top: 100%;
+    right: 0%;
+    position: absolute;
+    animation: bg1 33s ease infinite;
+    border: solid;
+    text-align: left;
+    display: block;
+}
+
+.nav-link {
+    border: solid;
+    display: block;
+    font-size: clamp(1em,4vw,2em);
+    padding: 1vw 4vw;
+    text-decoration: none;
+    position: relative;
+    z-index: 1000;
+}
+
+.nav-link:before {
+    content: "";
+    position:absolute;
+    left:0px;
+    top:0px;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #F7CE68,
+        #F7CE68,
+        #FBAB7E
+    );
+}
+
+.nav-link:hover:before {
+    
+    z-index:-1;
+    transition: width .6s ease-in-out;
+    width:100%;
+}
+
+h2{
+    display: block;
+    font-size: clamp(1em,1.3vw,2em);
+    margin-top: 3vh;
+    margin-bottom: .3vh;
+}
+
+.div-info {
+    text-align: left;
+    padding-left: 3vh;
+    padding-bottom: 3vh;
+    margin: .6vh;
+    margin-bottom: 2.6vh;
+    white-space: pre-line;
+    color: black;
+    font-size: clamp(.9em,1.3vw,1.9em);
+}
+.info-div-titles {
+    padding-left: 3vh;
+    padding-bottom: 3vh;
+    margin: .6vh;
+    margin-bottom: 2.6vh;
+    white-space: pre-line;
+    color: black;
+    font-size: clamp(.9em,1.3vw,1.9em);
+}
+
+h3 {
+    display: block;
+    font-size: clamp(1em,2vw,2em);
+    margin-top: 1.3vh;
+    margin-bottom: 3.3vh;
+}
+
+table {
+    display: inline-block;
+    padding: .63vh;
+    padding-bottom: 1.63vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+th {
+    text-emphasis: triangle;
+    font-size: clamp(1em,.6vw, 2em);
+    padding: .3vw;
+    border: 1px solid;
+    text-transform: uppercase;
+}
+td {
+    border: 1px solid;
+    padding: .3vh;
+}
+
+h4 {
+    display: block;
+    font-size: clamp(1em,.9vw,2em);
+    margin-top: .9vh;
+}
+
+.table-info{
+    text-align: left;
+    padding: .9vh;
+    margin: .6vh;
+    white-space: pre-line;
+}
+
+.table-div {
+    display: inline-block;
+    margin-left: .33%;
+    margin-right: .33%;
+    padding: .3vh;
+    align-items: center;
+    border: 3px solid;
+}
+
+.info-div {
+    position:center;
+    overflow: auto;
+    box-shadow: 0 0 10px salmon, 0 0 20px salmon, 0 0 30px white, 0 0 40px white;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid salmon thick;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+    border-radius: 25px;
+    color: black;
+    width: 99%;
+}
+
+.glow {
+    color: tomato;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {text-shadow: 0 0 10px salmon, 0 0 20px salmon, 0 0 30px white, 0 0 40px white;}
+    to   {text-shadow: 0 0 10px salmon, 0 0 20px salmon, 0 0 30px white, 0 0 40px white;}
+}
+
+@keyframes bg1 {
+    0%   {background-color:#FBAB7E;}
+    50%  {background-color:#F7CE68;}
+    100% {background-color:#FBAB7E;}
+}
+
+.footnav {
+    margin: 75px 75px;
+    white-space: pre-line;
+}
+
+a:link {
+    text-decoration: solid;
+    color: tomato;
+}
+a:visited {
+    text-decoration: solid;
+    color: tomato;
+}
+a:hover {
+    text-decoration: solid;
+    color: #BB9999;
+}
+a:active {
+    text-decoration: solid;
+    color: white;
+}
+
+.visually-hidden {
+    height: 1px;
+    width: 1px;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+}
+
+@keyframes CL1 {
+    0%     {background: linear-gradient(to right, rebeccapurple, teal, seagreen, limegreen, seagreen, teal, rebeccapurple);}
+    14.28% {background: linear-gradient(to right, teal, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple);}
+    28.56% {background: linear-gradient(to right, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal);}
+    42.84% {background: linear-gradient(to right, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen);}
+    57.12% {background: linear-gradient(to right, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen);}
+    71.40% {background: linear-gradient(to right, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen);}
+    85.67% {background: linear-gradient(to right, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen, teal);}
+    100%   {background: linear-gradient(to right, rebeccapurple, teal, seagreen, limegreen, seagreen, teal, rebeccapurple);}
+}
+.ColorLine {
+    opacity: 75%;
+    height: 1px;
+    animation: CL1 .6s ease infinite;
+}
+@keyframes CL2 {
+    0%     {background: linear-gradient(to right, teal, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple);}
+    14.28% {background: linear-gradient(to right, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal);}
+    28.56% {background: linear-gradient(to right, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen);}
+    42.84% {background: linear-gradient(to right, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen);}
+    57.12% {background: linear-gradient(to right, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen);}
+    71.40% {background: linear-gradient(to right, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen, teal);}
+    85.67% {background: linear-gradient(to right, rebeccapurple, teal, seagreen, limegreen, seagreen, teal, rebeccapurple);}
+    100%   {background: linear-gradient(to right, teal, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple);}
+}
+.ColorLine2 {
+    opacity: 75%;
+    height: 1px;
+    animation: CL2 .6s ease infinite;
+}
+@keyframes CL3 {
+    0%     {background: linear-gradient(to right, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal);}
+    14.28% {background: linear-gradient(to right, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen);}
+    28.56% {background: linear-gradient(to right, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen);}
+    42.84% {background: linear-gradient(to right, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen);}
+    57.12% {background: linear-gradient(to right, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen, teal);}
+    71.40% {background: linear-gradient(to right, rebeccapurple, teal, seagreen, limegreen, seagreen, teal, rebeccapurple);}
+    85.67% {background: linear-gradient(to right, teal, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple);}
+    100%   {background: linear-gradient(to right, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal);}
+}
+.ColorLine3 {
+    opacity: 75%;
+    height: 1px;
+    animation: CL3 .6s ease infinite;
+}
+@keyframes CL4 {
+    0%     {background: linear-gradient(to right, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen);}
+    14.28% {background: linear-gradient(to right, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen);}
+    28.56% {background: linear-gradient(to right, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen);}
+    42.84% {background: linear-gradient(to right, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen, teal);}
+    57.12% {background: linear-gradient(to right, rebeccapurple, teal, seagreen, limegreen, seagreen, teal, rebeccapurple);}
+    71.40% {background: linear-gradient(to right, teal, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple);}
+    85.67% {background: linear-gradient(to right, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal);}
+    100%   {background: linear-gradient(to right, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen);}
+}
+.ColorLine4 {
+    opacity: 75%;
+    height: 1px;
+    animation: CL4 .6s ease infinite;
+}
+@keyframes CL5 {
+    0%     {background: linear-gradient(to right, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen);}
+    14.28% {background: linear-gradient(to right, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen);}
+    28.56% {background: linear-gradient(to right, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen, teal);}
+    42.84% {background: linear-gradient(to right, rebeccapurple, teal, seagreen, limegreen, seagreen, teal, rebeccapurple);}
+    57.12% {background: linear-gradient(to right, teal, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple);}
+    71.40% {background: linear-gradient(to right, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal);}
+    85.67% {background: linear-gradient(to right, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen);}
+    100%   {background: linear-gradient(to right, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen);}
+}
+.ColorLine5 {
+    opacity: 75%;
+    height: 1px;
+    animation: CL5 .6s ease infinite;
+}
+@keyframes CL6 {
+    0%     {background: linear-gradient(to right, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen);}
+    14.28% {background: linear-gradient(to right, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen, teal);}
+    28.56% {background: linear-gradient(to right, rebeccapurple, teal, seagreen, limegreen, seagreen, teal, rebeccapurple);}
+    42.84% {background: linear-gradient(to right, teal, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple);}
+    57.12% {background: linear-gradient(to right, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal);}
+    71.40% {background: linear-gradient(to right, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen);}
+    85.67% {background: linear-gradient(to right, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen);}
+    100%   {background: linear-gradient(to right, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen);}
+}
+.ColorLine6 {
+    opacity: 75%;
+    height: 1px;
+    animation: CL6 .6s ease infinite;
+}
+@keyframes CL7 {
+    0%     {background: linear-gradient(to right, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen, teal);}
+    14.28% {background: linear-gradient(to right, rebeccapurple, teal, seagreen, limegreen, seagreen, teal, rebeccapurple);}
+    28.56% {background: linear-gradient(to right, teal, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple);}
+    42.84% {background: linear-gradient(to right, seagreen, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal);}
+    57.12% {background: linear-gradient(to right, limegreen, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen);}
+    71.40% {background: linear-gradient(to right, seagreen, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen);}
+    85.67% {background: linear-gradient(to right, teal, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen);}
+    100%   {background: linear-gradient(to right, rebeccapurple, rebeccapurple, teal, seagreen, limegreen, seagreen, teal);}
+}
+.ColorLine7 {
+    opacity: 75%;
+    height: 1px;
+    animation: CL7 .6s ease infinite;
+}

@@ -1,0 +1,95 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>NameofPage</title>
+        <link rel="stylesheet" href="styles.css" type="text/css"/>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="ColorLine"> </div>
+                <div class="ColorLine2"> </div>
+                <div class="ColorLine3"> </div>
+                <div class="header-row">
+                    <h1>ReportFolderName</h1>
+                    <p><a href=#InfoDivTitle>InfoDivTitle</a></p>
+          
+                    <nav class="site-nav">
+                        <button class="menu"
+                                id="menu-button"
+                                type="button"
+                                aria-expanded="false"
+                                aria-label="menu"
+                                aria-controls="primary-nav">
+                            <span class="visually-hidden">Menu</span>
+                            <div class="bar" aria-hidden="true"></div>
+                            <div class="bar" aria-hidden="true"></div>
+                            <div class="bar" aria-hidden="true"></div>
+                        </button>
+                        <ul id="primary-nav" class="primary-nav">
+
+                        </ul>
+                    </nav>
+                </div>
+                <div class="ColorLine4"> </div>
+                <div class="ColorLine5"> </div>
+                <div class="ColorLine6"> </div>
+                <div class="ColorLine7"> </div>
+            </header>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    // Hide menu by default
+                    document.querySelector('#primary-nav').style.display = 'none';
+
+                    // Add click event listener to menu button
+                    document.querySelector('#menu-button').addEventListener('click', () => {
+                        // Toggle visibility of menu
+                        const menu = document.querySelector('#primary-nav');
+                        const menuButton = document.querySelector('#menu-button');
+                        if (menu.style.display === 'none') {
+                            menu.style.display = 'block';
+                            menuButton.classList.add('expanded');
+                        } else {
+                            menu.style.display = 'none';
+                            menuButton.classList.remove('expanded');
+                        }
+                    });
+                });
+
+            </script>
+
+            <h2 class="glow">
+                NameofPage
+            </h2>
+            <p class='div-info'>
+                Info About What is on this page
+            </p>
+
+            <div class="info-div">
+                <h3 id="InfoDivTitle">InfoDivTitle</h3>
+                <p class='div-info'>
+                    InfoDivInfo
+                </p>
+                <div class="table-div">
+                    <h4>Table1</h4>
+                    <p class="table-info">
+                        Info about table1
+                        more info about table 1
+                        more more info
+                    </p>
+                    <table>
+                        <colgroup><col /><col /><col /><col /><col /></colgroup>
+                        <tr><th>column1</th><th>column2</th><th>column3</th><th>column4</th><th>column5</th></tr>
+                        <tr><td>Info1</td><td>Info2</td><td>info3</td><td>Info4</td><td>Info5</td></tr>
+                        <tr><td>info1.2</td><td>info2.2</td><td>info3.2</td><td>info1.2</td><td>info2.2</td></tr>
+                        <tr><td>info1.3</td><td>info2.3</td><td>info3.3</td><td>info1.3</td><td>info2.3</td></tr>
+                    </table>
+                </div>
+            </div>
+            <footer class='footnav'>
+                Copyright &copy; CyberCondor, 2023
+            </footer>
+        </div>
+    </body>
+</html>
