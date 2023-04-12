@@ -249,8 +249,8 @@ function main{
     SanitizeManagerPropertyFormat $ExistingUsers_AD
 
     $MainFolderPath   = "~\_FrequenyAnalysisReports"
-    if($Enabled -eq $true){$ReportFolderName = ("ADUserPropertiesFrequenyAnalysisReport_EnabledUsersOnly_" + $(get-date -format yyy-MM-dd))}
-    else{                  $ReportFolderName = ("ADUserPropertiesFrequenyAnalysisReport_" + $(get-date -format yyy-MM-dd))}
+    if($Enabled -eq $true){$ReportFolderName = ("ADUserPropertiesFrequenyAnalysisReport-$($Server)_EnabledUsersOnly_" + $(get-date -format yyy-MM-dd))}
+    else{                  $ReportFolderName = ("ADUserPropertiesFrequenyAnalysisReport-$($Server)_" + $(get-date -format yyy-MM-dd))}
     $ReportFolder     = New-Object -TypeName PSObject -Property @{Name=$ReportFolderName;Path="$MainFolderPath\$ReportFolderName"}
     $CurrDir          = (pwd).Path
     if((!(Test-Path Template.html)) -or (!((Get-Content Template.html | select -First 1).Contains("<!DOCTYPE HTML>")))){Write-Output "Cannot Find HTML Template File." ; break}
